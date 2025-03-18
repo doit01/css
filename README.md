@@ -3,7 +3,7 @@
 交叉轴（cross axis）
 垂直于主轴的轴称为交叉轴，它的方向取决于主轴方向，是主轴写满一行后另起一行的方向，从 cross-start 到 cross-end ， cross size 是它可放置的宽度，是容器的宽或高，取决于 flex-direction。
 
-[https://baijiahao.baidu.com/s?id=1795304916931420534&wfr=spider&for=pc](https://blog.csdn.net/qq_18237141/article/details/139142903)
+https://blog.csdn.net/qq_18237141/article/details/139142903
 
     row （默认）：从左到右 ltr ；从右到左 rtl
     row-reverse ：从右到左 ltr ；从左到右 rtl
