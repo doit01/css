@@ -25,9 +25,15 @@ align-self 	在弹性子元素上使用。覆盖容器的 align-items 属性。
 flex 	设置弹性盒子的子元素如何分配空间。
 
 
-    网格布局
+    网格布局 https://www.runoob.com/css3/css-grid.html
       grid-template-columns: auto auto auto auto;
   grid-template-rows: 100px 300px;
+  https://www.runoob.com/try/try.php?filename=trycss_grid-template-rows
+4等分
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    https://www.runoob.com/try/try.php?filename=trycss_grid-template-rows-fr
+    
+
 
 img {
     display: block;
@@ -37,3 +43,4 @@ img {
 <p>要让图片居中对齐, 可以使用 margin: auto; 并将它放到块元素中：</p>
 
 <img src="https://static.jyshare.com/images/mix/paris.jpg" alt="Paris" style="width:40%">
+
