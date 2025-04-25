@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-end
+		;
+    width: 400px;
+    height: 250px;
+    background-color: lightgrey;
+}
+
+.flex-item {
+    background-color: cornflowerblue;
+    width: 100px;
+    margin: 10px;
+}
+</style>
+</head>
+<body>
+    在 CSS Flexbox 布局中，‌侧轴（Cross Axis）的方向并不固定为纵轴‌，它的具体方向取决于主轴（Main Axis）的设定，二者始终相互垂直
+    默认情况‌：flex-direction: row（主轴为‌水平方向‌），此时侧轴为‌垂直方向（纵轴）‌。
+    主轴对齐‌：justify-content（控制主轴方向的对齐）。
+‌侧轴对齐‌：align-items（单行）、align-content（多行）
+
+
+    align-items 设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式。 
+    语法
+    
+    align-items: flex-start | flex-end | center | baseline | stretch
+
+<div class="flex-container">
+  <div class="flex-item">flex item 1</div>
+  <div class="flex-item">flex item 2</div>
+  <div class="flex-item">flex item 3</div>  
+</div>
+
+</body>
+</html>

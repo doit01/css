@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 400px;
+    height: 250px;
+    background-color: lightgrey;
+}
+
+.flex-item {
+    background-color: cornflowerblue;
+    margin: 10px;
+}
+
+.item1 {
+    -webkit-flex: 2;
+    flex: 2;
+}
+
+.item2 {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.item3 {
+    -webkit-flex: 1;
+    flex: 1;
+}
+</style>
+</head>
+<body>
+    https://www.runoob.com/css3/css3-flexbox.html
+    flex 属性用于指定弹性子元素如何分配空间。
+    语法
+    
+    flex: auto | initial | none | inherit |  [ flex-grow ] || [ flex-shrink ] || [ flex-basis ]
+    
+    各个值解析:
+    
+        auto: 计算值为 1 1 auto
+        initial: 计算值为 0 1 auto
+        none：计算值为 0 0 auto
+        inherit：从父元素继承
+        [ flex-grow ]：定义弹性盒子元素的扩展比率。
+        [ flex-shrink ]：定义弹性盒子元素的收缩比率。
+        [ flex-basis ]：定义弹性盒子元素的默认基准值。
+    
+<div class="flex-container">
+  <div class="flex-item item1">flex item 1</div>
+  <div class="flex-item item2">flex item 2</div>
+  <div class="flex-item item3">flex item 3</div>  
+</div>
+
+</body>
+</html>
