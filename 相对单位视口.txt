@@ -1,0 +1,94 @@
+2025 年 CSS 视口单位（Viewport Units）详解与实践指南
+一、‌基本视口单位‌
+
+vw（Viewport Width）‌
+
+定义‌：1vw 等于视口宽度的 1%。
+示例‌：若视口宽度为 1200px，width: 50vw 实际值为 600px。
+
+vh（Viewport Height）‌
+
+定义‌：1vh 等于视口高度的 1%。
+示例‌：若视口高度为 800px，height: 75vh 实际值为 600px。
+
+vmin 与 vmax‌
+
+vmin‌：取视口宽度和高度中的较小值的 1%。
+示例：视口为 1200x800px，10vmin = 80px（基于 800px 高度计算）。
+vmax‌：取视口宽度和高度中的较大值的 1%。
+示例：视口为 1200x800px，10vmax = 120px（基于 1200px 宽度计算）。
+二、‌应用场景‌
+
+全屏布局‌
+
+使用 100vw 和 100vh 实现全屏容器，适用于轮播图、弹窗等组件。
+代码示例‌：
+css
+Copy Code
+.fullscreen-modal {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+响应式字体与间距‌
+
+结合 calc() 动态调整字体大小：
+css
+Copy Code
+h1 { 
+  font-size: calc(2rem + 1vw);  /* 随视口宽度自适应缩放 */
+}
+
+
+等比缩放元素‌
+
+通过 vmin 实现正方形元素（如头像、卡片）：
+css
+Copy Code
+.square-box {
+  width: 30vmin;
+  height: 30vmin;  /* 保证宽高始终相等 */
+}
+
+三、‌注意事项‌
+
+浏览器兼容性‌
+
+主流浏览器均支持视口单位，但需注意旧版 Edge（v18 前）和 Opera Mini 的兼容性问题。
+备用方案‌：使用 % 或媒体查询作为降级方案。
+
+移动端适配问题‌
+
+iOS Safari 中 100vh 可能包含地址栏高度，需通过 CSS 变量或 JavaScript 动态修正。
+修复代码‌：
+css
+Copy Code
+:root {
+  --full-height: 100vh;
+}
+@supports (height: 100dvh) {
+  :root {
+    --full-height: 100dvh;  /* 使用新的 dvh 单位 */
+  }
+}
+.container {
+  height: var(--full-height);
+}
+
+
+避免过度依赖视口单位‌
+
+在固定尺寸组件（如导航栏）中优先使用 px 或 rem，保持设计一致性。
+四、‌视口单位与其他单位的对比‌
+单位‌	‌参照基准‌	‌适用场景‌
+vw/vh	视口尺寸	全屏布局、响应式元素
+rem	根元素字体大小	字体、间距的全局控制
+%	父容器尺寸	嵌套布局、相对定位
+px	物理像素	固定尺寸元素（如边框）
+
+关键实践总结‌：
+
+优先使用 vw/vh 实现动态布局，结合 calc() 增强灵活性。
+移动端适配推荐使用 dvh（动态视口高度）替代传统 vh。
+复杂场景中混合使用视口单位与 rem，平衡响应式与可维护性。
